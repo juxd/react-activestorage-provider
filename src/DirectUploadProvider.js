@@ -35,10 +35,17 @@ export type DelegatedProps = {|
   render: RenderProps => React.Node,
 |}
 
+type BlobAttributes = {
+  filename: string,
+  content_type: string,
+  byte_size: number,
+  checksum: string,
+}
+
 type Props = {
   ...DelegatedProps,
   origin: Origin,
-  onSuccess: (string[]) => mixed,
+  onSuccess: (BlobAttributes[]) => mixed,
   headers?: CustomHeaders,
 }
 
